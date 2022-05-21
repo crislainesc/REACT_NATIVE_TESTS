@@ -1,4 +1,10 @@
-import {View, StyleSheet, Text, Button, TextInput} from 'react-native';
+import {
+    View,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    TextInput,
+} from 'react-native';
 
 const Login: React.FC = ({navigation}: any) => {
     const goToHomeHandler = () => {
@@ -37,13 +43,9 @@ const Login: React.FC = ({navigation}: any) => {
                 Esqueceu sua senha?
             </Text>
 
-            <View style={styles.button}>
-                <Button
-                    title="Conecte-se"
-                    color="transparent"
-                    onPress={goToHomeHandler}
-                />
-            </View>
+            <TouchableOpacity style={styles.button} onPress={goToHomeHandler}>
+                <Text style={styles.buttonText}>Conecte-se</Text>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -86,9 +88,10 @@ const styles = StyleSheet.create({
         marginLeft: 15,
         position: 'relative',
         top: 10,
-        width: 75,
+        width: 70,
         backgroundColor: 'white',
         textAlign: 'center',
+        zIndex: 1,
     },
 
     input: {
@@ -116,6 +119,12 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 50,
         borderRadius: 15,
+    },
+
+    buttonText: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold'
     },
 });
 

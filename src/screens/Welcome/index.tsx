@@ -1,4 +1,4 @@
-import {View, StyleSheet, Image, Text, Button} from 'react-native';
+import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 
 const Welcome: React.FC = ({navigation}: any) => {
     const goToLoginHandler = () => {
@@ -17,13 +17,12 @@ const Welcome: React.FC = ({navigation}: any) => {
                 <Text style={styles.text}>
                     Testes automatizados no Reat Native
                 </Text>
-                <View style={styles.button}>
-                    <Button
-                        title="Próximo >"
-                        color="transparent"
-                        onPress={goToLoginHandler}
-                    />
-                </View>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={goToLoginHandler}
+                >
+                    <Text style={styles.buttonText}>Conecte-se</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
     },
 
     image: {
-        flex: 2,
+        flex: 3,
     },
 
     infoContainer: {
@@ -52,14 +51,21 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
     },
-
+    
     button: {
+        marginTop: 40,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#069A8E',
         width: 125,
         height: 50,
         borderRadius: 15,
+    },
+
+    buttonText: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold',
     },
 });
 

@@ -1,8 +1,6 @@
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-import {AiFillHome, AiOutlineUser} from 'react-icons/ai';
-import {MdOutlineFavoriteBorder} from 'react-icons/md';
-import {BsHandbag} from 'react-icons/bs';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Home: React.FC = () => {
     return (
@@ -11,12 +9,22 @@ const Home: React.FC = () => {
                 <Text style={styles.text}>Página Inicial</Text>
             </View>
             <View style={styles.iconsContainer}>
-                <View style={styles.iconActive}>
-                    <AiFillHome />
-                </View>
-                <MdOutlineFavoriteBorder />
-                <BsHandbag />
-                <AiOutlineUser />
+                <TouchableOpacity>
+                    <Ionicons name="home" size={32} color="#005555" />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Ionicons name="heart-outline" size={32} color="#707070" />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Ionicons
+                        name="analytics-outline"
+                        size={32}
+                        color="#707070"
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Ionicons name="person-outline" size={32} color="#707070" />
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -46,15 +54,7 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        color: '#707070',
-        fontSize: 40,
         marginBottom: 20,
-    },
-
-    iconActive: {
-        color: '#005555',
-        justifyContent: 'space-around',
-        fontSize: 40,
     },
 });
 
