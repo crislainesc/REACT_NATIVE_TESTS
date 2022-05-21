@@ -21,7 +21,7 @@ const Welcome: React.FC = ({navigation}: any) => {
                     style={styles.button}
                     onPress={goToLoginHandler}
                 >
-                    <Text style={styles.buttonText}>Conecte-se</Text>
+                    <Text style={styles.buttonText}>{'Próximo >'}</Text>
                 </TouchableOpacity>
             </View>
         </View>
