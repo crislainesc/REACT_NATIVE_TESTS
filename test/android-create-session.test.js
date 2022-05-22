@@ -6,7 +6,7 @@ const androidOptions = require('../helpers/caps').androidOptions;
 
 androidOptions.capabilities.app = app;
 
-describe('Create Android session', function () {
+describe('Automated tests in react native', function () {
     let client;
 
     before(async function () {
