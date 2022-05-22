@@ -13,16 +13,6 @@ const androidCaps = {
     app: undefined, // Will be added in tests
 };
 
-const androidWebCaps = {
-    platformName: 'Android',
-    automationName: 'UiAutomator2',
-    deviceName: process.env.ANDROID_DEVICE_NAME || DEFAULT_ANDROID_DEVICE_NAME,
-    platformVersion:
-        process.env.ANDROID_PLATFORM_VERSION ||
-        DEFAULT_ANDROID_PLATFORM_VERSION,
-    browserName: 'chrome',
-};
-
 const serverConfig = {
     path: '/wd/hub',
     host: process.env.APPIUM_HOST || 'localhost',
@@ -37,14 +27,6 @@ const androidOptions = Object.assign(
     serverConfig
 );
 
-const androidWebOptions = Object.assign(
-    {
-        capabilities: androidWebCaps,
-    },
-    serverConfig
-);
-
 module.exports = {
     androidOptions,
-    androidWebOptions,
 };
